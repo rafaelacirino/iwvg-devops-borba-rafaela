@@ -79,8 +79,8 @@ public class FractionTest {
         Fraction fraction2 = new Fraction(2, 3);
         Fraction result = fraction1.multiply(fraction2);
 
-        assertEquals(1, result.getNumerator(), "Numerator of 1/2 * 2/3 should be 1");
-        assertEquals(3, result.getDenominator(), "Denominator of 1/2 * 2/3 should be 3");
+        assertEquals(2, result.getNumerator(), "Numerator of 1/2 * 2/3 should be 2");
+        assertEquals(6, result.getDenominator(), "Denominator of 1/2 * 2/3 should be 6");
     }
 
     @Test
