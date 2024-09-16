@@ -14,7 +14,7 @@
 
     <artifactId>template-webflux</artifactId>
     <groupId>es.upm.miw</groupId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>4.0.0-Release</version>
     <packaging>jar</packaging>
 
     <name>${project.groupId}.${project.artifactId}</name>
