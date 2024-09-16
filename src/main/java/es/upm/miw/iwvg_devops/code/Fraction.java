@@ -33,6 +33,39 @@ public class Fraction {
         return (double) numerator / denominator;
     }
 
+    public boolean isProper(){
+        return Math.abs(numerator) < Math.abs(denominator);
+    }
+
+    public boolean isImproper(){
+        return Math.abs(numerator) >= Math.abs(denominator);
+    }
+
+    public boolean isEquivalent(Fraction fraction){
+        return this.numerator * fraction.denominator == this.denominator * fraction.numerator;
+    }
+
+    public Fraction add(Fraction fraction){
+        int num1 = this.numerator * fraction.denominator + fraction.numerator * this.denominator;
+        int den1 = this.denominator * fraction.denominator;
+        return new Fraction(num1, den1);
+    }
+
+    public Fraction multiply(Fraction fraction){
+        int num = this.numerator * fraction.numerator;
+        int den = this.denominator * fraction.denominator;
+        return new Fraction(num, den);
+    }
+
+    public Fraction divide(Fraction fraction){
+        if(fraction.numerator == 0){
+            throw new ArithmeticException("Cannot divide when numerator is zero");
+        }
+        int num = this.numerator * fraction.denominator;
+        int den = this.denominator * fraction.numerator;
+        return new Fraction(num, den);
+    }
+
     @Override
     public String toString() {
         return "Fraction{" +
