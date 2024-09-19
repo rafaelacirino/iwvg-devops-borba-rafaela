@@ -8,6 +8,7 @@ public class User {
     private String name;
     private String familyName;
     private List<Fraction> fractions;
+    private static List<User> allUsers = new ArrayList<>();
 
     public User() {
         this.fractions = new ArrayList<>();
@@ -60,7 +61,15 @@ public class User {
         return this.name.substring(0, 1) + ".";
     }
 
-    @Override
+    public static List<User> getAllUsers(){
+        return allUsers;
+    }
+
+    public static void addUser(User user) {
+        allUsers.add(user);
+    }
+
+        @Override
     public String toString() {
         return "User{" +
                 "id='" + id + '\'' +
