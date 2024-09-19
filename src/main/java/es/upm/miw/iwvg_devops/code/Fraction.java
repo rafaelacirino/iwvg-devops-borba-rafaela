@@ -54,7 +54,19 @@ public class Fraction {
     public Fraction multiply(Fraction fraction){
         int num = this.numerator * fraction.numerator;
         int den = this.denominator * fraction.denominator;
+        int mdc = mdc(num, den);
+
+        num = num / mdc;
+        den = den / mdc;
+
         return new Fraction(num, den);
+    }
+
+    private int mdc(int a, int b) {
+        if (b == 0) {
+            return Math.abs(a);
+        }
+        return mdc(b, a % b);
     }
 
     public Fraction divide(Fraction fraction){
